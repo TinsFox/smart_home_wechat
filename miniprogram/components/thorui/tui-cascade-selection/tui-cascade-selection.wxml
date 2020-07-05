@@ -1,0 +1,27 @@
+<view class="tui-cascade-selection">
+  <scroll-view scroll-x scroll-with-animation scroll-into-view="{{scrollViewId}}" style="background-color: {{headerBgColor}}" class="tui-bottom-line {{!headerLine?'tui-btm-none':''}}">
+    <view class="tui-selection-header" style="height: {{tabsHeight}};background-color: {{backgroundColor}}">
+      <view class="tui-header-item {{i === currentTab && bold?'tui-font-bold':''}}" style="color: {{i === currentTab ? activeColor : color}}; font-size: {{size}}rpx" id="id_{{i}}" catchtap="swichNav" data-current="{{i}}" wx:for="{{selectedArr}}" wx:for-index="i"
+        wx:key="i">
+        {{ item.text }}
+        <view class="tui-active-line" style="background-color: {{lineColor}}" wx:if="{{i === currentTab && showLine}}"></view>
+      </view>
+    </view>
+  </scroll-view>
+  <swiper class="tui-selection-list" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height: {{height}}; background-color:{{backgroundColor}}">
+    <swiper-item wx:for="{{selectedArr}}" wx:key="index">
+      <scroll-view scroll-y scroll-into-view="{{item.scrollViewId}}" class="tui-selection-item" style="height: {{height}}">
+        <view class="tui-first-item" style="height: {{firstItemTop}}"></view>
+        <view class="tui-selection-cell" style="padding: {{padding}}; background-color: {{backgroundColor}}" id="{{'id_'+subIndex}}" wx:for-items="{{item.list}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="subIndex" bindtap="change" data-index="{{index}}"
+          data-subindex="{{subIndex}}" data-subitem="{{subItem}}">
+          <icon type="success_no_circle" wx:if="{{item.index === subIndex}}" color="{{checkMarkColor}}" size="{{checkMarkSize}}" class="tui-icon-success"></icon>
+          <image src="{{subItem.src}}" wx:if="{{subItem.src}}" class="tui-cell-img" style="width: {{imgWidth}}; height: {{imgHeight}}; border-radius: {{radius}}"></image>
+          <view class="tui-cell-title {{item.index === subIndex && textBold?'tui-font-bold':''}} {{nowrap?'tui-flex-shrink':''}}" style="color: {{item.index === subIndex ? textActiveColor : textColor}}; font-size: {{textSize}}rpx">
+            {{ subItem.text }}
+          </view>
+          <view class="tui-cell-sub_title" style="color: {{subTextColor}}; font-size: {{subTextSize}}rpx" wx:if="{{subItem.subText}}">{{ subItem.subText }}</view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

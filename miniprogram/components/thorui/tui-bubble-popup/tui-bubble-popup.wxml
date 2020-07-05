@@ -1,0 +1,10 @@
+	<view class="tui-bubble-class {{flexEnd?'tui-flex-end':''}}">
+		<view class="tui-popup-list {{show?'tui-popup-show':''}} {{show && position!='relative'?'tui-z_index':''}}" style=" width: {{width}};background-color:{{backgroundColor}};border-radius:{{radius}};color:{{color}};position:{{position}};left: {{left}}; right:{{ right}}; bottom: {{bottom}}; top: {{top}};transform:translate({{translateX}},{{translateY}})">
+			<view class="tui-triangle" style="border-width: {{borderWidth}};	border-color: transparent transparent {{backgroundColor}} transparent;left: {{triangleLeft}};right: {{triangleRight}};	top: {{triangleTop}};	bottom: {{triangleBottom}}" wx:if="{{direction == 'top'}}"></view>
+			<view class="tui-triangle" style="border-width: {{borderWidth}};border-color: {{backgroundColor}} transparent transparent transparent;left: {{triangleLeft}};	right: {{triangleRight}};	top: {{triangleTop}};	bottom: {{triangleBottom}}" wx:if="{{direction == 'bottom'}}"></view>
+			<view class="tui-triangle" style="border-width: {{borderWidth}};border-color: transparent  {{backgroundColor}} transparent transparent;left: {{triangleLeft}};right: {{triangleRight}};top: {{triangleTop}};bottom: {{triangleBottom}}" wx:if="{{direction == 'left'}}"></view>
+			<view class="tui-triangle" style="border-width: {{borderWidth}};border-color: transparent transparent  transparent {{backgroundColor}};left: {{triangleLeft}};right: {{triangleRight}};top: {{triangleTop}};bottom: {{triangleBottom}}" wx:if="{{direction == 'right'}}"></view>
+			<slot />
+		</view>
+		<view catchtouchmove="stop" class="tui-popup-mask {{show?'tui-popup-show':''}}" style="background-color:{{maskBgColor}}" wx:if="{{mask}}" bindtap="handleClose"></view>
+	</view>

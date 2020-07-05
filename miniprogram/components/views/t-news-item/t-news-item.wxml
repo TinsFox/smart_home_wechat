@@ -1,0 +1,25 @@
+<view class="tui-list-view">
+	<view class="tui-list-cell {{lastChild ? 'tui-last-child' : ''}}" bindtap="bindClick">
+		<view class="tui-title-box">
+			<text class="tui-cell-title">{{ entity.title }}</text>
+		</view>
+		<view class="tui-img-container" wx:if="{{entity.imgArr && entity.imgArr.length > 0}}">
+			<view class="tui-cell-img" wx:for="{{entity.imgArr}}" wx:key="index">
+				<image src="{{item}}" class="tui-img"></image>
+			</view>
+		</view>
+		<view class="tui-sub-title">
+			<text class="tui-badge {{parse.getClass(entity.badgeType)}}" wx:if="{{entity.badgeType != 0}}">{{ entity.badgeText }}</text>
+			<text class="tui-sub-content">{{ entity.subContent }}</text>
+		</view>
+	</view>
+</view>
+
+<wxs module="parse">
+	module.exports = {
+		getClass: function(type) {
+			//1-tui-red 2-tui-blue  3-tui-orange 4-tui-green
+			return ['tui-red', 'tui-blue', 'tui-orange', 'tui-green'][type - 1];
+		}
+	}
+</wxs>

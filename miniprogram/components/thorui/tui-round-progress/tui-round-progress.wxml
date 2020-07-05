@@ -1,0 +1,4 @@
+<view class="tui-circular-container" style="width: {{diam}}px; height:{{height || diam}}px">
+	<canvas type="2d" id="progressCanvasId"  style="width: {{diam}}px;height:{{height || diam}}px"></canvas>
+	<slot></slot>
+</view>

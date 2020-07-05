@@ -1,0 +1,50 @@
+.tui-pay-item__title {
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+
+.tui-pay-amuont {
+  color: #eb0909;
+  font-weight: 500;
+  font-size: 34rpx;
+}
+
+.tui-pay-item {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+
+.tui-pay-logo {
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 15rpx;
+}
+
+.tui-radio {
+  margin-left: auto;
+  transform: scale(0.8);
+  transform-origin: 100% center;
+}
+
+.tui-btn-pay {
+  width: 100%;
+  padding: 68rpx 35rpx 50rpx 35rpx;
+  box-sizing: border-box;
+}
+
+.tui-recharge {
+  color: #fc872d;
+  margin-left: auto;
+  padding: 12rpx 0;
+}

@@ -1,0 +1,115 @@
+.tui-list-view {
+	width: 100%;
+	padding-left: 30rpx;
+	background-color: #fff;
+	box-sizing: border-box;
+}
+
+.tui-list-view:active {
+	background-color: #eeeeee;
+}
+
+.tui-list-cell {
+	width: 100%;
+	padding-top: 30rpx;
+	padding-bottom: 30rpx;
+	padding-right: 30rpx;
+	position: relative;
+}
+
+.tui-list-cell::after {
+	content: '';
+	position: absolute;
+	border-bottom: 1rpx solid #eaeef1;
+	-webkit-transform: scaleY(0.5);
+	transform: scaleY(0.5);
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
+.tui-last-child::after {
+	border-bottom: 0;
+}
+
+.tui-title-box {
+	width: 690rpx;
+	flex: 1;
+	word-break: break-all;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+
+.tui-cell-title {
+	font-size: 36rpx;
+	line-height: 56rpx;
+	flex: 1;
+	word-break: break-all;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	text-overflow: ellipsis;
+	color: #333333;
+}
+
+.tui-img-container {
+	width: 690rpx;
+	padding-top: 24rpx;
+	height: 184rpx;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.tui-cell-img {
+	width: 220rpx;
+	overflow: hidden;
+	position: relative;
+}
+
+.tui-img {
+	width: 220rpx;
+	height: 184rpx;
+	border-radius: 4rpx;
+}
+
+.tui-sub-title {
+	padding-top: 24rpx;
+	display: flex;
+	align-items: center;
+}
+
+.tui-sub-content {
+	font-size: 28rpx;
+	color: #bcbcbc;
+}
+
+.tui-badge {
+	padding: 6rpx 10rpx;
+	font-size: 24rpx;
+	border-radius: 4rpx;
+	margin-right: 20rpx;
+}
+
+.tui-red {
+	background-color: #fcebef;
+	color: #8a5966;
+}
+
+.tui-blue {
+	background-color: #ecf6fd;
+	color: #4dabeb;
+}
+
+.tui-orange {
+	background-color: #fef5eb;
+	color: #faa851;
+}
+
+.tui-green {
+	background-color: #e8f6e8;
+	color: #44cf85;
+}

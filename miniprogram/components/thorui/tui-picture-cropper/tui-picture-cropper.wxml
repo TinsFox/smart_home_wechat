@@ -1,0 +1,23 @@
+<wxs src="./tui-picture-cropper.wxs" module="parse"></wxs>
+<view class="tui-container" catchtouchmove="stop">
+	<view class="tui-image-cropper" change:prop="{{parse.propsChange}}" prop="{{props}}" data-lockRatio="{{lockRatio}}" data-lockWidth="{{lockWidth}}" data-lockHeight="{{lockHeight}}" data-maxWidth="{{maxWidth}}" data-minWidth="{{minWidth}}" data-maxHeight="{{maxHeight}}" data-minHeight="{{minHeight}}" data-width="{{width}}" data-height="{{height}}" data-limitMove="{{limitMove}}" data-windowHeight="{{sysInfo.windowHeight || 600}}" data-windowWidth="{{sysInfo.windowWidth || 400}}" data-imgTop="{{imgTop}}" data-imgLeft="{{imgLeft}}" data-imgWidth="{{imgWidth}}" data-imgHeight="{{imgHeight}}" data-angle="{{angle}}" catchtouchend="{{parse.cutTouchEnd}}" catchtouchstart="{{parse.cutTouchStart}}" catchtouchmove="{{parse.cutTouchMove}}">
+		<view class="tui-content">
+			<view class="tui-content-top tui-bg-transparent" style="transition-property: {{cutAnimation ? '' : 'background'}}"></view>
+			<view class="tui-content-middle">
+				<view class="tui-bg-transparent tui-wxs-bg" style="transition-property: {{cutAnimation ? '' : 'background'}}"></view>
+				<view class="tui-cropper-box" style="border-color: {{borderColor}}; transition-property: {{cutAnimation ? '' : 'background'}}">
+					<view wx:for="{{4}}" wx:key="index" class="tui-edge tui-{{index < 2 ? 'top' : 'bottom'}}-{{index === 0 || index === 2 ? 'left' : 'right'}}" style="width: {{edgeWidth}};height: {{edgeWidth}};border-color: {{edgeColor}};border-width: {{edgeBorderWidth}};left: {{index === 0 || index === 2 ? '-'+edgeOffsets : 'auto'}};right: {{index === 1 || index === 3 ? '-'+edgeOffsets : 'auto'}};top: {{index < 2 ? '-'+ edgeOffsets : 'auto'}};bottom: {{index > 1 ? '-'+edgeOffsets: 'auto'}}"></view>
+				</view>
+				<view class="tui-flex-auto tui-bg-transparent" style="transition-property: {{cutAnimation ? '' : 'background'}}"></view>
+			</view>
+			<view class="tui-flex-auto tui-bg-transparent" style="transition-property: {{cutAnimation ? '' : 'background'}}"></view>
+		</view>
+		<image bindload="imageLoad" binderror="imageLoad" catchtouchstart="{{parse.touchstart}}" catchtouchmove="{{parse.touchmove}}" catchtouchend="{{parse.touchend}}" data-minScale="{{minScale}}" data-maxScale="{{maxScale}}" data-disableRotate="{{disableRotate}}" style="width: {{imgWidth ? imgWidth + 'px' : 'auto'}};height: {{imgHeight ? imgHeight + 'px' : 'auto'}};transition-duration: {{cutAnimation ? 0.3 : 0}}s;" class="tui-cropper-image" src="{{imageUrl}}" wx:if="{{imageUrl}}" mode="widthFix"></image>
+	</view>
+	<canvas canvas-id="tui-image-cropper" id="tui-image-cropper" disable-scroll="{{true}}" style="width: {{CROPPER_WIDTH * scaleRatio}}px; height:{{CROPPER_HEIGHT * scaleRatio}}px" class="tui-cropper-canvas"></canvas>
+	<view class="tui-cropper-tabbar" wx:if="{{!custom}}">
+		<view class="tui-op-btn" catchtap="back">取消</view>
+		<image src="{{rotateImg}}" class="tui-rotate-img" bindtap="setAngle"></image>
+		<view class="tui-op-btn" catchtap="getImage">完成</view>
+	</view>
+</view>

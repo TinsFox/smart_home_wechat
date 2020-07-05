@@ -1,0 +1,19 @@
+<wxs module='tools' src='../../common/tools.wxs'></wxs>
+
+<tui-list-view title="{{device.title}}">
+	<tui-list-cell lineLeft="false">
+		<view class="tui-item-box">
+			<view class="tui-msg-box">
+				<image src="/static/images/news/avatar_1.jpg" class="tui-msg-pic" mode="widthFix"></image>
+				<view class="tui-msg-item">
+					<view class="tui-msg-name">呼噜猪</view>
+					<view class="tui-msg-content">上线打游戏了！</view>
+				</view>
+			</view>
+			<view class="tui-msg-right">
+				<view class="tui-msg-time">{{tools.formatTime(device.update_time)}}</view>
+				<switch color="#19be6b" class="tui-scale-small" checked="{{device.state}}" bindchange="stateChange"/>
+			</view>
+		</view>
+	</tui-list-cell>
+</tui-list-view>

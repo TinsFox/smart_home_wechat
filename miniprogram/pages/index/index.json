@@ -1,3 +1,13 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "首页",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "backgroundColorTop": "#fcfcfc",
+  "backgroundColorBottom": "#fcfcfc",
+  "disableScroll": true,
+  "usingComponents": {
+    "tui-footer":"/components/thorui/tui-footer/tui-footer",
+    "tui-scroll-top":"/components/thorui/tui-scroll-top/tui-scroll-top",
+    "tui-icon": "/components/thorui/tui-icon/tui-icon"
+  }
 }

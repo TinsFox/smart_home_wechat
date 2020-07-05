@@ -1,0 +1,118 @@
+/* miniprogram/pages/productDetail/productDetail.wxss */
+.container {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.tui-scale-small {
+  transform: scale(0.8);
+  transform-origin: 100% center;
+}
+
+.tui-scale-small .wx-switch-input {
+  margin: 0 !important;
+}
+.tui-flex {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 26rpx;
+}
+.tui-item-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.tui-list-cell_name {
+  padding-left: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tui-ml-auto {
+  margin-left: auto;
+}
+
+.tui-right {
+  margin-left: auto;
+  margin-right: 34rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.tui-logo {
+  height: 52rpx;
+  width: 52rpx;
+  flex-shrink: 0;
+}
+
+.tui-flex {
+  display: flex;
+  align-items: center;
+}
+
+.tui-msg-box {
+  display: flex;
+  align-items: center;
+}
+
+.tui-msg-pic {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  display: block;
+  margin-right: 24rpx;
+  flex-shrink: 0;
+}
+
+.tui-msg-item {
+  max-width: 500rpx;
+  min-height: 80rpx;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tui-msg-name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 34rpx;
+  line-height: 1;
+  color: #262b3a;
+}
+
+.tui-msg-content {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 26rpx;
+  line-height: 1;
+  color: #9397a4;
+}
+
+.tui-msg-right {
+  max-width: 120rpx;
+  height: 88rpx;
+  margin-left: auto;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.tui-right-dot {
+  height: 76rpx !important;
+  padding-bottom: 10rpx !important;
+
+}
+
+.tui-msg-time {
+  width: 100%;
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #9397a4;
+}

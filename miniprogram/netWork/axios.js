@@ -26,7 +26,6 @@ class Token {
   // 以 code 获取 token
   getToken(noRefech = false) {
     // 获取获取登录凭证（code）,code仅能使用一次
-    console.log('env', env.baseUrl)
     wx.login({
       success: function (res) {
         wx.request({
@@ -37,8 +36,6 @@ class Token {
           },
           success: (res => {
             if (res.statusCode.toString().charAt(0) === '2') {
-              console.log(res)
-              console.log(res.data)
               if (res.data.access_token && res.data.refresh_token) {
                 const {access_token, refresh_token} = res.data
                 wx.setStorageSync('access_token', access_token)

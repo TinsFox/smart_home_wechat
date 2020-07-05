@@ -1,0 +1,60 @@
+<view catchtouchmove="stop">
+	<view class="tui-reply-tabbar" style="padding-bottom:{{keyboardHeight}}px">
+		<view class="tui-chat-tabbar">
+			<view class="tui-icon tui-icon-im_more tui-icon-mr" bindtap="showKeyBoard" data-index="3"></view>
+			<view class="tui-icon tui-icon-im_face tui-icon-mr" bindtap="showKeyBoard" data-index="2"></view>
+
+			<textarea auto-height class="tui-chat-input" bindinput="inputReply" fixed="{{true}}" adjust-position="{{false}}" maxlength="300" value="{{content}}" show-confirm-bar="{{false}}" placeholder-class="tui-phcolor" catchtap="showKeyBoard" data-index="1" id="textarea" hidden="{{isVoice}}"></textarea>
+			<view class="tui-chat-voice_btn" hover-class="tui-opcity" hover-stay-time="150" wx:if="{{isVoice}}">按住 说话</view>
+			<view class="tui-send-box">
+				<view class="tui-icon tui-icon-im_voice" wx:if="{{!isVoice && !content}}" bindtap="switchVoice"></view>
+				<view class="tui-icon tui-icon-im_keyboard" wx:if="{{isVoice && !content}}" bindtap="switchInput"></view>
+				<view class="tui-btn-send" wx:if="{{content}}" style="color: {{color}}" hover-class="tui-opcity" hover-stay-time="150" bindtap="hideKeyboard">
+					{{ sendText }}
+				</view>
+			</view>
+		</view>
+		<view class="tui-reply-more">
+			<view class="tui-face-box" wx:if="{{showIndex == 2}}">
+				<scroll-view scroll-y style="height: {{replyContainerH + 'px'}}">
+					<view class="tui-face-scroll">
+						<view class="tui-face-img_box" wx:for="{{faceList}}" wx:key="index" bindtap="inputFace" data-index="{{index}}">
+							<image src="https://www.thorui.cn/wx/static/images/im_face/{{item}}.png" class="tui-face-img"></image>
+						</view>
+					</view>
+				</scroll-view>
+				<view class="tui-delete-face_box">
+					<view class="tui-delete-keybord {{!content?'tui-opcity':''}}"><text class="tui-icon tui-icon-delete_keybord"></text></view>
+				</view>
+			</view>
+			<view class="tui-more-box" style="height: {{replyContainerH + 'px'}}" wx:if="{{showIndex == 3}}">
+				<view class="tui-more-item" hover-class="tui-opcity" hover-stay-time="150">
+					<view class="tui-more-icon">
+						<view class="tui-icon tui-icon-photo"></view>
+					</view>
+					<text class="tui-more-text">照片</text>
+				</view>
+				<view class="tui-more-item" hover-class="tui-opcity" hover-stay-time="150">
+					<view class="tui-more-icon">
+						<view class="tui-icon tui-icon-video"></view>
+					</view>
+					<text class="tui-more-text">视频通话</text>
+				</view>
+				<view class="tui-more-item" hover-class="tui-opcity" hover-stay-time="150">
+					<view class="tui-more-icon">
+						<view class="tui-icon tui-icon-at"></view>
+					</view>
+					<text class="tui-more-text">bind好友</text>
+				</view>
+				<view class="tui-more-item" hover-class="tui-opcity" hover-stay-time="150">
+					<view class="tui-more-icon">
+						<view class="tui-icon tui-icon-location"></view>
+					</view>
+					<text class="tui-more-text">定位</text>
+				</view>
+			</view>
+		</view>
+		<view class="tui-inner-mask" wx:if="{{isLocked}}"></view>
+	</view>
+	<view class="tui-reply-mask {{showIndex?'tui-box-show':''}} {{showIndex && !maskOpacity?'tui-mask-show':''}}" wx:if="{{mask}}" bindtouchmove bindtap="hideKeyboard"></view>
+</view>

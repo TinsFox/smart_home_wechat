@@ -1,0 +1,15 @@
+.tui-image-container {
+	display: inline-flex;
+	align-items: center;
+}
+.tui-image-direction {
+	flex-direction: column;
+}
+.tui-image-item_box {
+	position: relative;
+}
+.tui-image-item {
+	border-style: solid;
+	flex-shrink: 0;
+	display: block;
+}

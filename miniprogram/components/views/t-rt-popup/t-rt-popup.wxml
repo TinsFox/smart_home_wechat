@@ -1,0 +1,9 @@
+<view>
+	<tui-bubble-popup show="{{popupShow}}" bindclose="toggle" maskBgColor="{{maskBgColor}}" right="8px" top="{{popupTop}}" triangleRight="16px" triangleTop="-22rpx">
+		<view class="tui-popup-item {{index === 0?'tui-start':''}} {{index === itemList.length - 1?'tui-last':''}}" hover-class="tui-item-active" hover-stay-time="150" bindtap="handleClick" data-index="{{index}}" wx:for="{{itemList}}" wx:key="index">
+			<tui-icon name="{{item.icon}}" color="#fff" size="{{20}}" wx:if="{{item.icon && !isImage}}"></tui-icon>
+			<image src="{{item.icon}}" wx:if="{{item.icon && isImage}}" style="width:{{width}};height:{{height}}"></image>
+			<text class="tui-bubble-popup_title">{{ item.title }}</text>
+		</view>
+	</tui-bubble-popup>
+</view>

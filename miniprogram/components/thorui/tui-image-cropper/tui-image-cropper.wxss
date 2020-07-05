@@ -1,0 +1,139 @@
+.tui-cropper-container {
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.7);
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1;
+	}
+
+	.tui-image-cropper {
+		width: 100vw;
+		height: 100vh;
+		position: absolute;
+	}
+
+	.tui-content {
+		width: 100vw;
+		height: 100vh;
+		position: absolute;
+		z-index: 9;
+		display: flex;
+		flex-direction: column;
+		pointer-events: none;
+	}
+
+	.tui-bg-transparent {
+		background-color: rgba(0, 0, 0, 0.5);
+		transition-duration: 0.35s;
+	}
+
+	.tui-content-top {
+		pointer-events: none;
+	}
+
+	.tui-content-middle {
+		width: 100%;
+		height: 200px;
+		display: flex;
+		box-sizing: border-box;
+	}
+
+	.tui-cropper-box {
+		position: relative;
+		/* transition-duration: 0.3s; */
+		border-style: solid;
+		border-width: 1rpx;
+		box-sizing: border-box;
+	}
+
+	.tui-flex-auto {
+		flex: auto;
+	}
+
+	.tui-cropper-image {
+		width: 100%;
+		border-style: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		transform-origin: center;
+	}
+
+	.tui-cropper-canvas {
+		position: fixed;
+		z-index: 10;
+		left: -2000px;
+		top: -2000px;
+		pointer-events: none;
+	}
+
+	.tui-edge {
+		border-style: solid;
+		pointer-events: auto;
+		position: absolute;
+		box-sizing: border-box;
+	}
+
+	.tui-top-left {
+		border-bottom-width: 0 !important;
+		border-right-width: 0 !important;
+	}
+
+	.tui-top-right {
+		border-bottom-width: 0 !important;
+		border-left-width: 0 !important;
+	}
+
+	.tui-bottom-left {
+		border-top-width: 0 !important;
+		border-right-width: 0 !important;
+	}
+
+	.tui-bottom-right {
+		border-top-width: 0 !important;
+		border-left-width: 0 !important;
+	}
+
+	.tui-cropper-tabbar {
+		width: 100%;
+		height: 120rpx;
+		padding: 0 40rpx;
+		box-sizing: border-box;
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		z-index: 99;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		color: #ffffff;
+		font-size: 32rpx;
+	}
+
+	.tui-cropper-tabbar::after {
+		content: ' ';
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		border-top: 1rpx solid rgba(255, 255, 255, 0.2);
+		-webkit-transform: scaleY(0.5) translateZ(0);
+		transform: scaleY(0.5) translateZ(0);
+		transform-origin: 0 100%;
+	}
+
+	.tui-op-btn {
+		height: 80rpx;
+		display: flex;
+		align-items: center;
+	}
+
+	.tui-rotate-img {
+		width: 44rpx;
+		height: 44rpx;
+	}

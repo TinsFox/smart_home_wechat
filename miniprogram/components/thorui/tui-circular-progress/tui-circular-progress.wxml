@@ -1,0 +1,5 @@
+<view class="tui-circular-container" style="width: {{diam}}px; height:{{height || diam}}px">
+	<canvas class="tui-circular-default" canvas-id="{{defaultCanvasId}}" id="{{defaultCanvasId}}" style="width: {{diam}}px; height: {{height || diam}}px" wx:if="{{defaultShow}}"></canvas>
+	<canvas class="tui-circular-progress" canvas-id="{{progressCanvasId}}" id="{{progressCanvasId}}" style="width: {{diam}}px;height:{{height || diam}}px"></canvas>
+	<slot></slot>
+</view>

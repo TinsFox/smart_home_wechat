@@ -1,0 +1,6 @@
+<view class="tui-image-container {{direction == 'column'?'tui-image-direction':''}}">
+	<view wx:for="{{imageList}}" wx:key="index" class="tui-image-item_box" style="width: {{width}};height: {{height}};border-radius: {{radius}};margin-left: {{direction == 'column' ? 0 : (index && distance) + 'rpx'}};margin-top: {{direction == 'row' ? 0 : (index && distance) + 'rpx'}}" bindtap="bindClick" data-index="index" data-id="item.id">
+		<image class="tui-image-item" mode="{{mode}}" lazy-load="{{lazyLoad}}" fade-show="{{fadeShow}}" webp="{{webp}}" show-menu-by-longpress="{{longpress}}" binderror="error" bindload="load" style="width: {{width}}; height: {{height}}; border-radius: {{radius}}; border-width: {{borderWidth}}; border-color: {{borderColor}}" src="{{item.src}}"></image>
+		<slot />
+	</view>
+</view>

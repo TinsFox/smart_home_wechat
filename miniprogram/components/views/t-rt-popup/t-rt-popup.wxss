@@ -1,0 +1,40 @@
+.tui-popup-item {
+  padding: 34rpx;
+  display: flex;
+  align-items: center;
+  font-size: 34rpx;
+  position: relative;
+}
+
+.tui-popup-item::after {
+  content: '';
+  position: absolute;
+  border-bottom: 1rpx solid #888;
+  -webkit-transform: scaleY(0.5);
+  transform: sc8aleY(0.5);
+  bottom: 0;
+  right: 0;
+  left: 38rpx;
+}
+
+.tui-bubble-popup_title {
+  padding-left: 20rpx;
+}
+
+.tui-start {
+  border-top-left-radius: 8rpx;
+  border-top-right-radius: 8rpx;
+}
+
+.tui-last {
+  border-bottom-left-radius: 8rpx;
+  border-bottom-right-radius: 8rpx;
+}
+
+.tui-last::after {
+  border-bottom: 0 !important;
+}
+
+.tui-item-active {
+  background-color: #444;
+}
